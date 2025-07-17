@@ -1,0 +1,69 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    // Type checking
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Module resolution
+    "baseUrl": "./src",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    // Path mapping
+    "paths": {
+      "@/*": ["./*"],
+      "@/app/*": ["./app/*"],
+      "@/assets/*": ["./core/assets/*"],
+      "@/components/*": ["./components/*"],
+      "@/constants/*": ["./core/constants/*"],
+      "@/hooks/*": ["./core/hooks/*"],
+      "@/scripts/*": ["./core/scripts/*"],
+      "@/types/*": ["./core/types/*"],
+      "@/utils/*": ["./core/utils/*"],
+      "@/config/*": ["./core/config/*"],
+      "@/lib/*": ["./core/lib/*"],
+      "@/core/*": ["./core/*"]
+    },
+
+    // Code generation
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "removeComments": false,
+    "importHelpers": true,
+
+    // Interop constraints
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "allowUmdGlobalAccess": false,
+
+    // Language and environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Skip type checking for faster builds
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "build", ".expo", "ios", "android"]
+}
